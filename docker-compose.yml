@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: ec02-funcionarios
+    ports:
+      - "8080:80"
+    # pasta montada como volume: salvou o arquivo, e so dar F5
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./js:/usr/share/nginx/html/js:ro
